@@ -1,7 +1,26 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+* {
     padding: 0;
     margin: 0;
+}
+
+:root{
+    --text-color: #ffffff;
+    counter-reset: headings;
+    --border-radius: 10px;
+}
+
+h2 {
+    counter-increment: headings;
+}
+
+h2::before {
+    content: counter(headings) ". ";
 }
 
 body {
@@ -10,17 +29,18 @@ body {
     font-weight: bold;
 }
 
+/* Header and navigation bar */
 h1 {
-    color: #ffffff;
+    color: var(--text-color);
     margin-right: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-shadow: 3px 2px 4px black;
     display: inline-block;
+    font-size: clamp(2rem, calc(7vh + 1rem), 2.5rem); 
 }
 
 h1:hover {
     color: #837e83;
-    font-size: 40px;
 }
 
 header {
@@ -44,7 +64,7 @@ header {
 }
 
 .navigation .navchoices a {
-    color: #ffffff;
+    color: var(--text-color);
     display: block;
     text-decoration: none;
     padding: 10px;
@@ -57,7 +77,7 @@ header {
 }
 
 .navigation .navchoices li:hover {
-    background-color: aqua;
+    background-color: #00ffff;
 }
 
 .navigation .navchoices a:hover {
@@ -66,6 +86,7 @@ header {
     text-decoration: underline;
 }
 
+/* Main content sections */
 .home {
     background-color: #dbd8db;
 }
@@ -83,6 +104,7 @@ main {
 }
 
 .home {
+    border-radius: var(--border-radius);
     display: grid;
     margin: 30px;
 }
@@ -92,11 +114,16 @@ main {
     font-size: 3em;
 }
 
+main section .image {
+    text-align: center;
+}
+
 img {
-    border-radius: 20px;
-    height: 300px;
-    width: 350px;
-    box-shadow: 5px 4px 4px white, -5px -4px 4px white;
+    --border-radius: 50px;
+    border-radius: var(--border-radius);
+    width: 70%;
+    height: auto;
+    box-shadow: 5px 4px 4px rgb(139, 137, 137), -5px -4px 4px rgb(255, 255, 255);
 }
 
 .image img:hover {
@@ -115,7 +142,8 @@ img {
 /* Skills section */
 
 .skills {
-    background-color: #807c80;
+    border-radius: var(--border-radius);
+    background-color: #979497;
     text-align: center;
 }
 
@@ -137,6 +165,7 @@ img {
 /* Goals section */
 
 .goals {
+    border-radius: var(--border-radius);
     margin-top: 30px;
     background-color: #988b8b;
     text-align: center;
@@ -169,10 +198,12 @@ img {
 /* Experience section */
 
 .exp-section {
+    border-radius: var(--border-radius);
     background-color: #d0cbd0;
     margin-top: 20px;
     text-align: center;
     margin: auto;
+    width: min(90%, 1200px);
 }
 
 .exp-section h2 {
@@ -194,7 +225,7 @@ img {
 /* footer */
 
 .contact {
-    padding: 50px;
+    padding: min(5rem, 5vh);
     background-color: #514653;
     text-align: center;
 }
