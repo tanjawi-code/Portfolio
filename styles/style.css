@@ -24,9 +24,7 @@ h2::before {
 }
 
 body {
-    font-style: italic;
     background-color: #c1b8c1;
-    font-weight: bold;
 }
 
 /* Header and navigation bar */
@@ -58,6 +56,7 @@ header {
 }
 
 .navigation .navchoices {
+    font-weight: bold;
     display: flex;
     border: solid rgb(123, 123, 123);
     box-shadow: 3px 2px 4px rgb(165, 159, 159), -3px -2px 4px rgb(165, 159, 159);
@@ -87,12 +86,10 @@ header {
 }
 
 /* Main content sections */
-.home {
-    background-color: #dbd8db;
-}
-
 main {
-    margin-top: 150px;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
     display: grid;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
@@ -103,22 +100,53 @@ main {
     "experience-part experience-part";
 }
 
+h2 {
+    font-size: clamp(1.5rem, 10vh, 3rem);
+    margin-bottom: 15px;
+}
+
+/* Applaying the same properties to skills, goals, and experience sections in main */
+.skills,
+.goals,
+.exp-section{
+    width: min(90%, 1200px);
+    margin: auto;
+    border-radius: var(--border-radius);
+}
+
+.skills .learnt,
+.goals .goals-list,
+.exp-section .exp-list {
+    display: inline-block;
+    line-height: 1.5rem;
+    font-weight: bold;
+}
+
+.skills p,
+.goals p,
+.exp-section p {
+    margin-bottom: 10px;
+}
+
+/* Home section */
+
 .home {
     border-radius: var(--border-radius);
     display: grid;
     margin: 30px;
+    padding: min(1rem, 5vh);
+    background-color: #dbd8db;
 }
 
-#about {
-    text-align: center;
-    font-size: 3em;
-}
-
-main section .image {
-    text-align: center;
+.home p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(1.3rem, 5vh, 1.5rem);
+    font-style: italic;
+    line-height: 35px;
 }
 
 img {
+    border-top: 25px;
     --border-radius: 50px;
     border-radius: var(--border-radius);
     width: 70%;
@@ -131,31 +159,10 @@ img {
     animation-duration: 5s;
 }
 
-.home p {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.5em;
-    font-weight: normal;
-    text-align: center;
-    margin-inline: 50px;
-}
-
 /* Skills section */
 
 .skills {
-    border-radius: var(--border-radius);
     background-color: #979497;
-    text-align: center;
-}
-
-.skills h2 {
-    font-size: 3em;
-}
-
-.skills .learnt {
-    display: inline-block;
-    margin-top: 10px;
-    font-style: normal;
-    line-height: 1.5em;
 }
 
 .skills .learnt li:hover{
@@ -165,21 +172,8 @@ img {
 /* Goals section */
 
 .goals {
-    border-radius: var(--border-radius);
-    margin-top: 30px;
+    margin-top: 25px;
     background-color: #988b8b;
-    text-align: center;
-}
-
-.goals h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.goals ul {
-    font-style: normal;
-    display: inline-block;
-    line-height: 1.5em;
 }
 
 .goals .goals-list #languages li{
@@ -191,41 +185,22 @@ img {
     background-color: rgb(9, 219, 100);
 }
 
-.goals .goals-list ol li:hover {
-    background-color: #47ea86;
-}
-
 /* Experience section */
 
 .exp-section {
-    border-radius: var(--border-radius);
     background-color: #d0cbd0;
-    margin-top: 20px;
-    text-align: center;
-    margin: auto;
-    width: min(90%, 1200px);
-}
-
-.exp-section h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
 }
 
 .exp-section p {
+    line-height: 20px;
     margin-inline: 30px;
-    font-weight: normal;
-}
-
-.exp-section .exp-list {
-    display: inline-block;
-    font-style: normal;
-    line-height: 1.5em;
+    font-size: clamp(1rem, calc(1vh + 0.5rem), 2rem);
 }
 
 /* footer */
 
 .contact {
-    padding: min(5rem, 5vh);
+    padding: min(5rem, 8vh);
     background-color: #514653;
     text-align: center;
 }
@@ -233,21 +208,31 @@ img {
 .contact p {
     color: #ffffff;
     font-size: 1.5em;
-    font-style: normal;
 }
 
 .contact a {
     color: #25ea25;
-    font-style: normal;
-    font-weight: normal;
 }
 
 @keyframes shrink {
     50%{box-shadow: 3px 3px 4px #00ff2a, -3px -3px 4px #00ff2a;}
 }
 
-@media(max-width: 1024px) {
+/* Responsive design */
+
+@media(max-width: 1536px) {
     main {
+        max-width: 1280px;
+    }
+
+    .image img{
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 1280px) {
+    main {
+        max-width: 1024px;
         grid-template-areas: 
         "about-part about-part"
         "skills-part image-part"
@@ -256,22 +241,61 @@ img {
     }
 
     .image img{
-        margin-top: 20px;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media(max-width: 1024px) {
+    main {
+        max-width: 768px;
+        grid-template-areas:
+        "about-part"
+        "skills-part image-part"
+        "goals-part"
+        "experience-part";
+    }
+
+    .image img{
+        width: 90%;
     }
 }
 
 @media(max-width: 768px) {
     main {
-        grid-template-areas: 
+        max-width: 640px;
+        grid-template-areas:
         "about-part"
         "image-part"
         "skills-part"
         "goals-part"
         "experience-part";
     }
+
+    .image img{
+        width: 90%;
+        aspect-ratio: 16/9;
+    }
+
+    .skills,
+    .exp-section{
+        margin-top: 20px;
+    }
 }
 
-/* There six media  I will use :
-used one: 1024px and 768px.
-unsed one: 475px, 640px, 1280px, and 1536px.
-*/
+@media(max-width: 640px) {
+    main {
+        max-width: 475px;
+        aspect-ratio: 1/1;
+    }
+
+    .contact {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 475px) {
+    .skills,
+    .goals {
+        max-width: 80%;
+    }
+}
