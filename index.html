@@ -25,23 +25,25 @@
 
     <!-- Main content sections -->
     <main>
-        <!-- Main content sections -->
+        <!-- Home content sections -->
         <section class="home" style="grid-area: about-part;">
-            <h2 id="about">About Me</h2>
-            <p>My name is Ahmed. I live in Morocco, and I'm 18 years old, studyding in a high school. I still have only this year and the next year for graduating.</p>
-            <p>I like learning Tech especially programming and CyberSecurity, and I want to be a professional person at these two fields and make special things.</p>
-        </section>
+            <div id="home-div-image">
+                <img src="images/Cartoon-style illust.png" alt="A developer whriting code on his Laptop">
+            </div>
 
-        <!-- Image section -->
-        <section style="grid-area: image-part;">
-                <div class="image"><img src="images/An abstract illustra.png" alt="an image of a developer whriting code"></div>
+            <div id="description-div">
+                <h2>About Me</h2>
+                <p>My name is Ahmed. I live in Morocco, and I'm 18 years old, studying in a high school. I still have only this year and the next year for graduating.</p>
+                <p>I like learning Tech especially programming and CyberSecurity, and I want to be a professional person at these two fields and make special things.</p>
+            </div>
         </section>
 
         <!-- Skills section -->
         <section class="skills" style="grid-area: skills-part;">
-            <h2>Skills</h2>
+            <div>
+                <h2>Skills</h2>
                 <p>Through my journey of starting in Tech, I have learnt some things:</p>
-                
+            
                 <ul class="learnt">
                     <li>Java.</li>
                     <li>Java Swing.</li>
@@ -50,9 +52,14 @@
                     <li>Applying basic SOLID Principles in Java projects.</li>
                     <li>Using Jackson library.</li>
                     <li>Maven with Java.</li>
-                    <li>HTML.</li>
-                    <li>CSS.</li>
+                    <li>HTML, CSS, and JavaScript.</li>
+                    <li>Node.js and Express.js.</li>
                 </ul>
+            </div>
+
+            <div id="skills-div-image">
+                <img src="images/An abstract illustra.png" alt="A boy surrounded by tech icons and writing code">
+            </div>
         </section>
 
         <!-- Goals section -->
@@ -64,15 +71,9 @@
                     <li>A strong backend dev.</li>
                     <li>Frontend basics (HTML, CSS, JS, TS.)</li>
                     <li>Understanding DSA deeper</li>
-                    <li>Learning CyberSecurity</li>
-                    <li>Learning two languages: 
-                        <ol id="languages">
-                            <li>Advanced English</li>
-                            <li>Spanish</li>
-                            <li>Germany</li>
-                        </ol>
-                    </li>
-                    <li>Having a strong and fit body</li>
+                    <li>Learning CyberSecurity fundamentals</li>
+                    <li>Computer Netowrking Basics</li>
+                    <li>Using Linux and Understanding it</li>
                 </ul>
             </div>
         </section>
@@ -80,13 +81,14 @@
         <!-- Experience section -->
         <section class="exp-section" style="grid-area: experience-part;">
             <h2>My experience</h2>
-            <p>I have a little bit of experience with using java, because it was the first programming language I learnt.</p>
-            <p>I have built some simple projects in java using JavaFx, SQLite, and some technologies. I have pushed them to GitHub, and some of them are:</p>
+            <p>So far, I have worked on some projects, including:</p>
             <ul class="exp-list">
                 <li>Students Management</li>
                 <li>A calculator</li>
                 <li>Tic Tac Toe game</li>
                 <li>Developers Management</li>
+                <li>Web Games</li>
+                <li>A simple To-Do-List</li>
             </ul>
        </section>
     </main>
@@ -96,6 +98,8 @@
         <section class="contact">
             <p>My GitHub account</p>
             <a href="https://github.com/tanjawi-code" target="_blank" title="My GitHub account">Visit my GitHub account for more projects</a>
+            <p>My LeetCode account</p>
+            <a href="https://leetcode.com/u/tanjawi/" target="_blank" title="My LeetCode account">Visit my LeetCode account</a>
         </section>
     </footer>
 </body>
