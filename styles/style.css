@@ -17,6 +17,7 @@
 
 h2 {
     counter-increment: headings;
+    font-size: clamp(1.5rem, 5vh, 2rem);
 }
 
 h2::before {
@@ -86,15 +87,8 @@ header {
 }
 
 /* Main content sections */
-img {
-    width: 60%;
-    border-radius: var(--border-radius);
-    height: auto;
-}
-
 main {
     text-align: center;
-    margin: auto;
     margin-top: 120px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -103,41 +97,97 @@ main {
     grid-template-areas: 
     "about-part about-part"
     "skills-part skills-part"
-    "goals-part experience-part";
+    "goals-part goals-part"
+    "experience-part experience-part";
+}
+
+img {
+    --border-radius: 50px;
+    width: 70%;
+    height: auto;
+    box-shadow: 5px 4px 4px rgb(139, 137, 137), -5px -4px 4px rgb(255, 255, 255);
+}
+
+.home,
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.home,
+.skills,
+.goals,
+.exp-section {
+    margin-bottom: 15px;
+    width: 90%;
+    border-radius: var(--border-radius);
+}
+
+.skills .learnt,
+.goals .tech-goals-list,
+.goals .projects-goals-list,
+.goals .other-goals-list,
+.exp-section .exp-list {
+    display: inline-block;
+    margin-top: 10px;
+    line-height: 1.5rem;
+}
+
+.home #home-div-image,
+.skills #skills-div-image {
+    padding: min(0.6rem, 5vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Home section */
 .home {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     background-color: #dbd8db;
 }
 
 .home #description-div{
+    border-left: solid;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .home #description-div p {
-    margin: 20px;
+    margin: 15px;
     font-size: clamp(1.2rem, 5vh, 1.5rem);
     color: #333232;
     text-align: left;
-}
-
-.home #home-div-image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: min(0.6rem, 5vh);
+    font-size: clamp(1.2rem, 5vh, 1.5rem);
 }
 
 /* Skills section */
+.skills {
+    background-color: #b6b5b6;
+}
+
+.skills #skills-div {
+    border-right: solid;
+}
 
 /* Goals section */
+.goals {
+    background-color: #dbd8db;
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "goals-intro goals-intro goals-intro"
+    "tech-goals projects-goals other-goals";
+}
 
 /* Experience section */
+.exp-section {
+    background-color: #dfd6df;
+}
+
+.exp-section .exp-list span {
+    color: #f8016c;
+}
 
 
 /* footer */
