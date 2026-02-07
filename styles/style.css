@@ -180,6 +180,18 @@ img {
     "tech-goals projects-goals other-goals";
 }
 
+.goals .tech-goals-list li:hover{
+    background-color: #00ff2a;
+}
+
+.goals .projects-goals-list li:hover{
+    background-color: #ffae00;
+}
+
+.goals .other-goals-list li:hover{
+    background-color: #00f7ff;
+}
+
 /* Experience section */
 .exp-section {
     background-color: #dfd6df;
@@ -196,6 +208,8 @@ img {
     padding: min(5rem, 8vh);
     background-color: #514653;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .contact p {
@@ -214,82 +228,70 @@ img {
 
 /* Responsive design */
 
-/* @media(max-width: 1536px) {
-    main {
-        max-width: 1280px;
-    }
+@media(max-width: 1536px) {}
 
-    .image img{
-        margin-top: 20px;
-    }
-}
-
-@media(max-width: 1280px) {
-    main {
-        max-width: 1024px;
-        grid-template-areas: 
-        "about-part about-part"
-        "skills-part image-part"
-        "goals-part goals-part"
-        "experience-part experience-part";
-    }
-
-    .image img{
-        aspect-ratio: 1/1;
-    }
-}
+@media(max-width: 1280px) {}
 
 @media(max-width: 1024px) {
-    main {
-        max-width: 768px;
-        grid-template-areas:
-        "about-part"
-        "skills-part image-part"
-        "goals-part"
-        "experience-part";
-    }
-
-    .image img{
-        width: 90%;
+    .goals {
+        grid-template-areas: 
+        "goals-intro goals-intro"
+        "tech-goals projects-goals"
+        "other-goals other-goals";
     }
 }
 
 @media(max-width: 768px) {
-    main {
-        max-width: 640px;
-        grid-template-areas:
-        "about-part"
-        "image-part"
-        "skills-part"
-        "goals-part"
-        "experience-part";
-    }
-
-    .image img{
+    .home img {
         width: 90%;
-        aspect-ratio: 16/9;
     }
 
-    .skills,
-    .exp-section{
-        margin-top: 20px;
+    .skills img{
+        aspect-ratio: 1/1;
     }
 }
 
 @media(max-width: 640px) {
-    main {
-        max-width: 475px;
-        aspect-ratio: 1/1;
+    .home,
+    .skills,
+    .goals,
+    .exp-section {
+        width: 80%;
     }
 
-    .contact {
-        margin-top: 20px;
+    .home,
+    .skills {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home #description-div,
+    .skills #skills-div {
+        border-left: solid;
+        border-right: solid;
+    }
+
+    .home img,
+    .skills img {
+        width: 65%;
+    }
+
+    .home #description-div p {
+        font-size: clamp(1rem, 5vh, 1.2rem);
+    }
+
+    .goals {
+        grid-template-areas:
+        "goals-intro"
+        "tech-goals"
+        "projects-goals"
+        "other-goals";
     }
 }
 
 @media(max-width: 475px) {
-    .skills,
-    .goals {
-        max-width: 80%;
+    .contact {
+        flex-direction: column;
+        gap: 20px;
     }
-} */
+}
