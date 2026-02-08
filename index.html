@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
+
+    <style type="text/css">
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,11 +20,21 @@
         
         <nav class="navigation">
             <ul class="navchoices">
-                <li><a href="">Home</a></li>
-                <li><a href="">Skills</a></li>
-                <li><a href="">Experience</a></li>
-                <li><a href="">Goals</a></li>
-                <li><a href="">Contact</a></li>
+                <li class="hideOnMobile"><a href="#home">Home</a></li>
+                <li class="hideOnMobile"><a href="#skills">Skills</a></li>
+                <li class="hideOnMobile"><a href="#experience">Experience</a></li>
+                <li class="hideOnMobile"><a href="#goals">Goals</a></li>
+                <li class="hideOnMobile"><a href="#contact">Contact</a></li>
+                <li class="menu-button"><a onclick="showSide()" href="#"><img id="menu-image" src="images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Show Menu"></a></li>
+            </ul>
+
+            <ul class="sidebarNavchoices">
+                <li><a onclick="closeSide()" href="#"><img id="close-menu-image" src="images/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Close Menu"></a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#goals">Goals</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -26,7 +42,7 @@
     <!-- Main content sections -->
     <main>
         <!-- Home content sections -->
-        <section class="home" style="grid-area: about-part;">
+        <section class="home" style="grid-area: about-part;" id="home">
             <div id="home-div-image">
                 <img src="images/Cartoon-style illust.png" alt="A developer whriting code on his Laptop">
             </div>
@@ -39,7 +55,7 @@
         </section>
 
         <!-- Skills section -->
-        <section class="skills" style="grid-area: skills-part;">
+        <section class="skills" style="grid-area: skills-part;" id="skills">
             <div id="skills-div">
                 <h2>Skills</h2>
                 <p>Through my journey of starting in Tech, I have learnt some things:</p>
@@ -62,8 +78,8 @@
         </section>
 
         <!-- Goals section -->
-        <section class="goals" style="grid-area: goals-part;">
-            <div style="grid-area: goals-intro;">
+        <section class="goals" style="grid-area: goals-part;" id="goals">
+            <div id="intro-goals" style="grid-area: goals-intro;">
                 <h2>My Goals</h2>
                 <p>In the future, I want to achieve some goals, including:</p>
             </div>
@@ -105,23 +121,25 @@
         </section>
 
         <!-- Experience section -->
-        <section class="exp-section" style="grid-area: experience-part;">
+        <section class="exp-section" style="grid-area: experience-part;" id="experience">
             <h2>My experience</h2>
-            <p>So far, I have worked on some projects, including:</p>
-            <ul class="exp-list">
-                <li>Students Management (<span>Desktop App</span>).</li>
-                <li>A calculator (<span>Desktop App and Website</span>).</li>
-                <li>Tic-Tac-Toe game (<span>Desktop App</span>).</li>
-                <li>Developers Management (<span>Desktop App</span>).</li>
-                <li>Web Games (<span>Website</span>).</li>
-                <li>A simple To-Do-List (<span>Website</span>).</li>
-            </ul>
+            <div>
+                <p>So far, I have worked on some projects, including:</p>
+                <ul class="exp-list">
+                    <li>Students Management (<span>Desktop App</span>).</li>
+                    <li>A calculator (<span>Desktop App and Website</span>).</li>
+                    <li>Tic-Tac-Toe game (<span>Desktop App</span>).</li>
+                    <li>Developers Management (<span>Desktop App</span>).</li>
+                    <li>Web Games (<span>Website</span>).</li>
+                    <li>A simple To-Do-List (<span>Website</span>).</li>
+                </ul>
+            </div>
        </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <section class="contact">
+        <section class="contact" id="contact">
             <div id="github-dev">
                 <p>My GitHub account</p>
                 <a href="https://github.com/tanjawi-code" target="_blank" title="My GitHub account">Visit my GitHub account for more projects</a>
@@ -133,5 +151,7 @@
             </div>
         </section>
     </footer>
+
+    <script src="./js/app.js"></script>
 </body>
 </html>
